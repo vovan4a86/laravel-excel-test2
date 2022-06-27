@@ -33,7 +33,7 @@
                         }
                     })
                     .catch(err => {
-                        error.innerHTML = 'Ошибка отправки данных на сервер!';
+                        error.innerHTML = 'Ошибка валидации на сервере!';
                         console.log('Server validation error! ', err)
                     })
             }

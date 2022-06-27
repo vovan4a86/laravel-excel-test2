@@ -8,10 +8,21 @@ use Illuminate\Http\Request;
 
 class RowController extends Controller {
 
+    /**
+     * Показать форму для создания новой записи.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
     public function create() {
         return view('create');
     }
 
+    /**
+     * Добавление новой записи в БД.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function store(Request $request) {
         $validated = $request->validate([
             'name' => 'required'
@@ -28,10 +39,6 @@ class RowController extends Controller {
 
             event(new MakeNewRowEvent('Новая запись добавлена из контроллера.'));
             return response()->json('Created', 201);
-
-        } else {
-            return response('Validation error', 400);
         }
     }
-
 }

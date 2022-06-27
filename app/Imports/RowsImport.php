@@ -33,7 +33,8 @@ class RowsImport implements ToModel, WithValidation, WithHeadingRow, WithChunkRe
     public function rules(): array {
         return [
             'name' => 'required|string',
-            'date' => 'required|date_format:d.m.Y'
+            'date' => 'required'
+//            'date' => 'required|date_format:d.m.Y' // такую проверку не проходит (?)
         ];
     }
 
