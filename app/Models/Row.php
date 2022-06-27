@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Row extends Model {
     use HasFactory;
     protected $fillable = [
-        'id',
         'name',
         'date',
     ];

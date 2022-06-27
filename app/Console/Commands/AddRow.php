@@ -37,6 +37,6 @@ class AddRow extends Command
      * @return int
      */
     public function handle() {
-        event(new MakeNewRowEvent('Fire! Your row is added!'));
+        event(new MakeNewRowEvent('Добавлена новая запись через консоль'));
     }
 }

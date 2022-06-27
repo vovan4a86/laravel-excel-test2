@@ -10,10 +10,18 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ExcelController extends Controller {
 
+    /**
+     * Импортирование xls-файла в БД
+    */
+
     public function import(Request $request) {
         Excel::import(new RowsImport, $request->file('formFile'));
         return redirect('/')->with('success', 'All good!');
     }
+
+    /**
+     * Вывод данных в двумерный массив
+    */
 
     public function output() {
         $rows = new RowsExport(Row::all()->toArray());
